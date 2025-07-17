@@ -11,7 +11,7 @@ const Register = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
 
-        fetch('http://localhost:3000/register', {
+        fetch('https://f33a39cffa7a.ngrok-free.app/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:3000/login', {
+        fetch('https://f33a39cffa7a.ngrok-free.app/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

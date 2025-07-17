@@ -10,7 +10,7 @@ const ToDoPage = () => {
   const userId = parseInt(localStorage.getItem('userId'));
 
   useEffect(() => {
-    fetch('http://localhost:3000/todos', {
+    fetch('https://f33a39cffa7a.ngrok-free.app/todos', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -18,7 +18,7 @@ const ToDoPage = () => {
   }, []);
 
   const handleAdd = (newTodoData) => {
-    fetch('http://localhost:3000/todos', {
+    fetch('https://f33a39cffa7a.ngrok-free.app/todos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const ToDoPage = () => {
     const todoToUpdate = todos.find(todo => todo.id === id);
     const updatedTodo = { ...todoToUpdate, [field]: value };
 
-    fetch(`http://localhost:3000/todos/${id}`, {
+    fetch(`https://f33a39cffa7a.ngrok-free.app/todos/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const ToDoPage = () => {
   const handleDelete = (id) => {
     if (!confirm('Yakin ingin menghapus todo ini?')) return;
 
-    fetch(`http://localhost:3000/todos/${id}`, {
+    fetch(`https://f33a39cffa7a.ngrok-free.app/todos/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
