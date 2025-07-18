@@ -8,7 +8,7 @@ const Todo = () => {
     const role = localStorage.getItem('userRole');
 
     useEffect(() => {
-        fetch('https://f33a39cffa7a.ngrok-free.app/todos', {
+        fetch('http://localhost:3000/todos', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -20,7 +20,7 @@ const Todo = () => {
     const handleAdd = (e) => {
         e.preventDefault();
 
-        fetch('https://f33a39cffa7a.ngrok-free.app/todos', {
+        fetch('http://localhost:3000/todos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Todo = () => {
     };
 
     const handleUpdate = (id, content, is_done) => {
-        fetch(`https://f33a39cffa7a.ngrok-free.app/todos/${id}`, {
+        fetch(`http://localhost:3000/todos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
